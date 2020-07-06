@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+
+<title>Abalone Age Prediction</title>
+<style>
+body{
+    background-color: #f56783;
+    padding-top: 5%;
+}
+
+.form-container{
+       width:350px;
+       height: auto;
+       padding: 20px 30;
+       background-color: #fff;
+       border-radius: 10px; 
+       box-shadow: 0 0 10px 0 #000;
+       margin:  auto;
+       position: relative;
+}
+
+.user-img{
+       background: url("Abalone_fish.jpg") no-repeat center;
+       width:  70px;
+       height: 70px;
+      background-size: 100%;  
+      position: absolute;
+      top:  -51px;
+      left: 130px;
+}
+
+ul.list{
+list-style-type: none;
+text-align: center;
+}
+
+ul.list li{
+width: 250px;
+margin-bottom: 15px;
+}
+
+ul.list li input{
+width: 250px;
+text-align: center;
+padding: 10px, 0px;
+border: none;
+background-color: #d3d3d3;
+border-radius: 5px;
+}
+
+ul.list li input[type="button"]{
+    background-color: #4690fb;
+    color: #fff;
+    width: 250px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div class="form-container">
+     <div class="user-img">
+     <img src="Abalone_fish.jpg" alt="">
+     </div>
+     <ul class="list">
+       <form action="{{url_for('y_predict')}}" method ="POST"><br>
+         <li><h2>Abalone Age Prediction</h2></li>
+         <li><input type="text"  name="Male" placeholder="Male" required="required" ></li>
+         <li><input type="text"  name="Female" placeholder="Female" required="required" ></li> 
+         <li><input type="text"  name="Infant" placeholder="Infant" required="required" ></li>
+         <li><input type="text"  name="diameter" placeholder="diameter" required="required" ></li>                   
+         <li><input type="text"  name="length" placeholder="length" required="required" ></li>
+         <li><input type="text"  name="height" placeholder="height" required="required" ></li>
+         <li><input type="text"  name="whole_weight" placeholder="whole_weight" required="required" ></li>
+         <li><input type="text"  name="shunked_weight" placeholder="shunked_weight" required="required" ></li>
+         <li><input type="text"  name="Viscera_weight" placeholder="Viscera_weight" required="required" ></li>
+         <li><input type="text"  name="Shell_weight" placeholder="Shell_weight" required="required" ></li>
+         <li><button type="submit" class= "btn btn-primary btn-block btn-large">PREDICT</button></li>
+       </form>
+       {{prediction_text }}
+       <br>
+     </ul>
+     <br>
+</div>
+</body>
+</html>
